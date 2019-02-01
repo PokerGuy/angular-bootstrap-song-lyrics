@@ -1,0 +1,22 @@
+<div>
+  <label>Artist:
+    <input [(ngModel)]="search.artist" placeholder="Artist">
+  </label>
+</div>
+<div>
+  <label>Title:
+    <input [(ngModel)]="search.title" placeholder="Title">
+  </label>
+</div>
+<button class="btn btn-primary disabled" *ngIf="searching; else searchEnabled">Searching...</button>
+<ng-template #searchEnabled>
+  <button class="btn btn-primary" (click)="click()">Search</button>
+</ng-template>
+<div class="col-md-12" *ngIf="result.lyrics">
+  <i>
+    {{result.lyrics}}
+  </i>
+</div>
+<div class="col-md-12" *ngIf="result.error">
+  {{result.error}}
+</div>

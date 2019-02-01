@@ -1,0 +1,19 @@
+<div *ngIf="historyService.history.length; else noHistory">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Artist</th>
+      <th scope="col">Title</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor='let search of historyService.history'>
+      <td>{{search.artist}}</td>
+      <td>{{search.title}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noHistory>
+  <div class="col-md-12 text-center">No search history yet. Make some searches!</div>
+</ng-template>
